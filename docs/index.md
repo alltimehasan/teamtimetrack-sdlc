@@ -46,6 +46,19 @@ Every material statement in this documentation carries an evidence badge. `{Conf
 | [Security & Privacy](#/security-privacy) | Threat surface, monitoring-specific privacy analysis, controls, areas requiring legal review | Security, legal, product |
 | [Risks](#/risks) | `RISK-*` — impact, likelihood, mitigation, owner | Project management |
 | [Traceability](#/traceability) | Source → goal → feature → requirement → acceptance criteria | BA, QA, audit |
+| **System Design** | | |
+| [Design Overview](#/sd-overview) | Architecture drivers, context and container views, technology decisions, ADR index | Everyone |
+| [Application Architecture](#/sd-architecture) | Module layout, dependency rules, request lifecycle, transactions, error model | Engineering |
+| [Tenancy, Identity & Security](#/sd-tenancy-security) | Two-layer isolation, authentication, five roles, media access, policy gating | Engineering, security |
+| [Domain & Database Design](#/sd-data-model) | 70 tables with keys, indexes, constraints, state machines and migration order | Engineering |
+| [Tracking, Sync & Derivation](#/sd-tracking) | Event protocol, offline guarantee, derivation algorithm, attendance | Engineering |
+| [Capture & Media](#/sd-capture) | Multi-display capture, upload, storage layout, retention and deletion | Engineering |
+| [API Design](#/sd-api) | Conventions, auth, errors, pagination, idempotency, endpoint surface | Engineering |
+| [Web & Desktop Clients](#/sd-clients) | Electron tracker internals and the Next.js application | Engineering |
+| [Jobs, Reporting & Billing](#/sd-platform) | Queue topology, job catalogue, reporting strategy, Stripe and entitlements | Engineering, ops |
+| [Deployment & Operations](#/sd-operations) | Environments, CI/CD, observability, backup, disaster recovery, runbooks | Operations |
+| [Decision Records](#/sd-adr) | 24 ADRs with context, alternatives and consequences | Engineering |
+| [Decision Log](#/decision-log) | `DEC-*` — 33 product decisions, what each closes and where it is implemented | Everyone |
 | [Source & Research Audit](#/source-audit) | Inventory of `resources/`, transcribed feature matrix, `CONF-*` conflicts, `GAP-*` gaps | BA, product |
 | [Assumptions](#/assumptions) | `ASM-*` — everything taken as true without evidence | Everyone |
 | [Open Questions](#/open-questions) | `OQ-*` — 28 decisions required before or during System Design | Product, leadership |

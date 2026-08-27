@@ -36,7 +36,7 @@
     {
       title: 'Requirements',
       items: [
-        { slug: 'functional-requirements',     title: 'Functional Requirements', tag: '161' },
+        { slug: 'functional-requirements',     title: 'Functional Requirements', tag: '162' },
         { slug: 'non-functional-requirements', title: 'Non-Functional Requirements', tag: '65' },
         { slug: 'business-rules',              title: 'Business Rules' },
         { slug: 'security-privacy',            title: 'Security & Privacy' },
@@ -44,13 +44,30 @@
       ]
     },
     {
+      title: 'System Design',
+      items: [
+        { slug: 'sd-overview',         title: 'Design Overview' },
+        { slug: 'sd-architecture',     title: 'Application Architecture' },
+        { slug: 'sd-tenancy-security', title: 'Tenancy, Identity & Security' },
+        { slug: 'sd-data-model',       title: 'Domain & Database Design', tag: '70' },
+        { slug: 'sd-tracking',         title: 'Tracking, Sync & Derivation' },
+        { slug: 'sd-capture',          title: 'Capture & Media' },
+        { slug: 'sd-api',              title: 'API Design' },
+        { slug: 'sd-clients',          title: 'Web & Desktop Clients' },
+        { slug: 'sd-platform',         title: 'Jobs, Reporting & Billing' },
+        { slug: 'sd-operations',       title: 'Deployment & Operations' },
+        { slug: 'sd-adr',              title: 'Decision Records', tag: '24' }
+      ]
+    },
+    {
       title: 'Decisions & evidence',
       items: [
+        { slug: 'decision-log',    title: 'Decision Log', tag: '33' },
         { slug: 'source-audit',    title: 'Source & Research Audit' },
         { slug: 'assumptions',     title: 'Assumptions', tag: '24' },
-        { slug: 'open-questions',  title: 'Open Questions', tag: '28' },
-        { slug: 'answers-decisions',  title: 'Answers & Decisions' },
-        { slug: 'answers-decisions-verify',  title: 'Answers & Decisions Verify' }
+        { slug: 'open-questions',  title: 'Open Questions', tag: '5 open' },
+        { slug: 'answers-decisions',        title: 'Decision Record — Round 1' },
+        { slug: 'answers-decisions-verify', title: 'Decision Record — Round 2' }
       ]
     }
   ];

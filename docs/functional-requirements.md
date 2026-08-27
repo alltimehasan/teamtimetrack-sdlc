@@ -1,7 +1,7 @@
 # Functional Requirements
 
 **Specification:** Team Time Track SRS foundation, v1.0
-**Requirement count:** 161
+**Requirement count:** 162
 **Convention:** every requirement is written as *"The system shall…"*, has exactly one owning module, one priority, one evidence class, and at least one testable acceptance criterion.
 
 ---
@@ -2698,6 +2698,23 @@ This requirement provides the mechanism. Whether erasure must be granted, what m
 - The request, decision, reason and outcome are audit-logged.
 - Erasure never removes records required for financial integrity without an explicit, recorded decision — [`BR-DATA-005`](#/business-rules).
 
+## REQ-DATA-006 — Storage accounting per media type
+{P1} {MVP} {Decided} · Actor: System · Depends: `REQ-MON-001`, `REQ-REC-001` · Decision: `DEC-026`
+
+**The system shall** record, per Organization per day per media type, the bytes added, bytes deleted, total bytes stored and object count.
+
+:::note Added by decision, not by the original baseline
+`DEC-026` keeps recordings on the shared `retention_months` entitlement and requires that **storage consumption be tracked separately** from commercial retention. This requirement is that mechanism, and it is the early-warning system for [`RISK-018`](#/risks).
+:::
+
+**Acceptance criteria**
+- Media types are distinguished: screenshot, recording, export, avatar.
+- Totals reconcile to the sum of media metadata for that Organization.
+- Figures are visible to Platform Administrators per Organization and platform-wide.
+- Growth materially out of step with seat count raises an operational alert — [`NFR-SCALE-006`](#/non-functional-requirements).
+- The record contains byte counts and object counts only; no captured content and no member-identifying detail beyond the Organization.
+- The accounting is the enforcement input for trial resource limits once [`OQ-029`](#/open-questions) sets values.
+
 ---
 
 # ADMIN · Platform Administration
@@ -2827,9 +2844,9 @@ This platform stores screenshots and screen recordings of people at work. An una
 | NOTIF | 5 | 4 | 1 | 0 | 0 |
 | BILL | 9 | 6 | 3 | 0 | 0 |
 | AUDIT | 5 | 4 | 1 | 0 | 0 |
-| DATA | 5 | 3 | 2 | 0 | 0 |
+| DATA | 6 | 3 | 3 | 0 | 0 |
 | ADMIN | 6 | 0 | 6 | 0 | 0 |
-| **Total** | **161** | **113** | **41** | **5** | **2** |
+| **Total** | **162** | **113** | **42** | **5** | **2** |
 
 ### By evidence class
 

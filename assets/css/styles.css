@@ -488,6 +488,8 @@ h1 .badge, h2 .badge, h3 .badge, h4 .badge { vertical-align: middle; margin-left
 .badge-p3 { color: var(--fg-faint); background: var(--bg-inset); border-color: var(--line-strong); }
 
 .badge-confirmed { color: var(--sev-info-fg); background: var(--sev-info-bg); border-color: var(--sev-info-line); }
+.badge-decided   { color: var(--sev-low-fg); background: var(--sev-low-bg); border-color: var(--sev-low-line); }
+.badge-adr       { color: var(--accent-strong); background: var(--accent-soft); border-color: var(--accent-line); }
 .badge-derived   { color: var(--accent-strong); background: var(--accent-soft); border-color: var(--accent-line); }
 .badge-proposed  { color: var(--sev-open-fg); background: var(--sev-open-bg); border-color: var(--sev-open-line); }
 .badge-open      { color: var(--sev-high-fg); background: var(--sev-high-bg); border-color: var(--sev-high-line); }

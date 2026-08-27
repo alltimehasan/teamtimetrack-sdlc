@@ -1,15 +1,18 @@
 # Open Questions & Decisions Required
 
-Twenty-eight decisions that this documentation deliberately did not make. Each is a question where guessing would either (a) commit the product to something a stakeholder has authority over, or (b) produce a requirement that is worse than no requirement.
+Questions this documentation deliberately did not answer, because guessing would either (a) commit the product to something a stakeholder has authority over, or (b) produce a requirement worse than no requirement.
+
+:::note 24 of these are now closed
+Answers were given in [Decision Record — Round 1](#/answers-decisions) and [Round 2](#/answers-decisions-verify), and are indexed in the [Decision Log](#/decision-log). The entries below are retained as the record of what was asked and why; **the decisions are authoritative for anything they cover**. One new question, `OQ-029`, arose from those answers.
+:::
+
+| Status | Count | Questions |
+|---|---|---|
+| **Closed** | 24 | `OQ-001` to `OQ-006`, `OQ-008`, `OQ-009`, `OQ-011` to `OQ-013`, `OQ-015` to `OQ-020`, `OQ-022` to `OQ-028` |
+| **Open** | 5 | `OQ-007` · `OQ-010` · `OQ-014` · `OQ-021` · `OQ-029` |
+| **Blocks launch** | 1 | `OQ-014` — legal review, the only one no engineering resolves |
 
 **Milestone `M-01` — the requirements baseline sign-off — requires every question here to be resolved or explicitly deferred with a named owner and a date.**
-
-| Blocking | Count | Meaning |
-|---|---|---|
-| **Blocks System Design** | 9 | Answer materially changes architecture, data model or scope |
-| **Blocks launch** | 8 | Answer needed before the product can be sold or operated |
-| **Blocks a specific feature** | 6 | Answer needed before that feature can be built |
-| **Should be answered early** | 5 | Cheap now, expensive later |
 
 ---
 
@@ -329,6 +332,23 @@ Support elevation is audited, time-bounded and notified. Should an Organization 
 
 ---
 
+### OQ-029 — What resource limits apply during a trial? {Open}
+**Owner:** Commercial · **Source:** `DEC-029`, Round 2 §5 · **Raised by:** the answers themselves
+
+`DEC-008` gives every plan a **30-day trial**, and `DEC-029` makes trials **entitlement-identical to the paid plan** — no feature restrictions. A Premium trial therefore grants multi-display screen recording for 30 days at no cost to the trialist.
+
+At the figures in [Capture & Media](#/sd-capture) §4, an unconstrained Premium trial with two displays can generate roughly **80 GB in a single 30-day trial per member**. Ten trial members produce close to a terabyte that must be stored for the plan's retention period.
+
+`DEC-029` explicitly separates **feature entitlement** from **resource abuse limits** and declines to invent numbers without a unit-economics decision. That is the right call — but the numbers are still needed.
+
+**Must decide:** the limit type and value for `trial_max_storage_bytes`, `trial_max_recording_hours` and `trial_max_seats`; whether breaching a limit stops recording, stops all capture, or prompts an upgrade; and whether limits differ by plan.
+
+**Already built:** the enforcement point sits in the upload-intent endpoint reading `storage_usage_daily`, and the limits are `plan_features` rows applied only while `status = 'trialing'` — [Jobs, Reporting & Billing](#/sd-platform) §9. Setting values is configuration, not development.
+
+**Until then:** the exposure is monitored rather than capped — a knowingly accepted position, not an oversight. [`RISK-018`](#/risks).
+
+---
+
 ## Question summary
 
 | ID | Question | Owner | Blocking |
@@ -361,6 +381,7 @@ Support elevation is audited, time-bounded and notified. Should an Organization 
 | `OQ-026` | Single-person organization approval | Product | Launch |
 | `OQ-027` | Multi-factor authentication | Product/Security | Design |
 | `OQ-028` | Default screenshot interval | Product | Feature |
+| `OQ-029` | Trial resource limits | Commercial | **Open** — early |
 
 ---
 
