@@ -48,7 +48,9 @@
       items: [
         { slug: 'source-audit',    title: 'Source & Research Audit' },
         { slug: 'assumptions',     title: 'Assumptions', tag: '24' },
-        { slug: 'open-questions',  title: 'Open Questions', tag: '28' }
+        { slug: 'open-questions',  title: 'Open Questions', tag: '28' },
+        { slug: 'answers-decisions',  title: 'Answers & Decisions' },
+        { slug: 'answers-decisions-verify',  title: 'Answers & Decisions Verify' }
       ]
     }
   ];
